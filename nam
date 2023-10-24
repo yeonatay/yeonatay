@@ -1,0 +1,14 @@
+soot namespace. If not, then it is relative to the current namespace.
+    pub(crate) is_absolute: bool,
+    pub is_absolute: bool,
+}
+
+impl std::convert::From<Ident> for CallPath {
+@@ -258,6 +258,19 @@ impl CallPath {
+        }
+    }
+
+    /// Removes the first prefix. Does nothing if prefixes are empty.
+    pub fn lshift(&self) -> CallPath {
+        if self.prefixes.is_empty() {
+            self.clone()
